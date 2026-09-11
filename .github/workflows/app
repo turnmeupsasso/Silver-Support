@@ -1,0 +1,1762 @@
+<meta charset="utf-8" />
+<title>Silver Support</title>
+<meta name="description" content="Patient, friendly in-person and remote tech support for seniors and anyone who wants a hand. Serving Saint Augustine, Florida." />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+
+<style>
+  :root {
+    /* ---- Light palette (also the base for the un-stamped/system state) ---- */
+    --paper:      #F6F4EF;
+    --surface:    #FFFFFF;
+    --surface-2:  #F0EDE5;
+    --ink:        #1E2A30;
+    --ink-soft:   #47585F;
+    --silver:     #85929A;
+    --line:       #E4DFD5;
+    --teal:       #0E6E7C;
+    --teal-deep:  #0A5560;
+    --teal-tint:  #E4EFF0;
+    --amber:      #A85A26;
+    --amber-deep: #8F4B1E;
+    --clay:       #9E382D;
+    --clay-tint:  #F4E5E0;
+    --on-teal:    #F3FBFB;
+    --on-clay:    #FBEDE9;
+    --focus:      #0E6E7C;
+    --shadow:     0 1px 2px rgba(30,42,48,.06), 0 10px 30px -18px rgba(30,42,48,.28);
+
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --container: 1140px;
+    --pad-inline: clamp(1.25rem, 5vw, 2.5rem);
+    --section-y: clamp(3.5rem, 8vw, 6rem);
+    --radius: 14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #121B1C;
+      --surface:    #192325;
+      --surface-2:  #1F2B2D;
+      --ink:        #ECE9E1;
+      --ink-soft:   #B2BEC0;
+      --silver:     #7C8A8E;
+      --line:       #2C3A3C;
+      --teal:       #49B8C5;
+      --teal-deep:  #6FCED8;
+      --teal-tint:  #143130;
+      --amber:      #D68C4F;
+      --amber-deep: #E4A06A;
+      --clay:       #C6584A;
+      --clay-tint:  #38201C;
+      --on-teal:    #06201F;
+      --on-clay:    #FBEDE9;
+      --focus:      #6FCED8;
+      --shadow:     0 1px 2px rgba(0,0,0,.3), 0 14px 40px -20px rgba(0,0,0,.6);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:      #121B1C;
+    --surface:    #192325;
+    --surface-2:  #1F2B2D;
+    --ink:        #ECE9E1;
+    --ink-soft:   #B2BEC0;
+    --silver:     #7C8A8E;
+    --line:       #2C3A3C;
+    --teal:       #49B8C5;
+    --teal-deep:  #6FCED8;
+    --teal-tint:  #143130;
+    --amber:      #D68C4F;
+    --amber-deep: #E4A06A;
+    --clay:       #C6584A;
+    --clay-tint:  #38201C;
+    --on-teal:    #06201F;
+    --on-clay:    #FBEDE9;
+    --focus:      #6FCED8;
+    --shadow:     0 1px 2px rgba(0,0,0,.3), 0 14px 40px -20px rgba(0,0,0,.6);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  [hidden] { display: none !important; }
+
+  html {
+    font-size: 112.5%; /* 18px base */
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  p { margin: 0; }
+  img, svg { max-width: 100%; }
+
+  a {
+    color: var(--teal);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  a:hover { color: var(--teal-deep); }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--pad-inline);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    background: var(--surface);
+    color: var(--ink);
+    padding: .75rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    z-index: 200;
+    transition: top .15s ease;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .site-header.scrolled {
+    border-bottom-color: var(--line);
+    box-shadow: 0 6px 24px -20px rgba(30,42,48,.5);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 74px;
+    position: relative;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .brand:hover { color: var(--ink); }
+  .brand-mark {
+    width: 36px; height: 36px;
+    flex: none;
+    display: block;
+  }
+  .brand-mark svg { width: 100%; height: 100%; display: block; }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+  }
+  .site-nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: .94rem;
+    font-weight: 500;
+    padding: .35rem 0;
+    white-space: nowrap;
+  }
+  .site-nav a:hover { color: var(--teal); }
+
+  .header-actions { display: flex; align-items: center; gap: .75rem; }
+
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    gap: .5rem;
+    background: transparent;
+    border: 1.5px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: .95rem;
+    font-weight: 600;
+    padding: .6rem .85rem;
+    border-radius: 10px;
+    cursor: pointer;
+    min-height: 46px;
+  }
+  .nav-toggle svg { width: 20px; height: 20px; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: 52px;
+    padding: .85rem 1.35rem;
+    border-radius: 11px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.1;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: transform .12s ease, background .18s ease, border-color .18s ease, color .18s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn svg { width: 19px; height: 19px; flex: none; }
+
+  .btn-primary { background: var(--amber); color: #fff; }
+  .btn-primary:hover { background: var(--amber-deep); color: #fff; }
+
+  .btn-outline { background: transparent; border-color: var(--teal); color: var(--teal); }
+  .btn-outline:hover { background: var(--teal-tint); color: var(--teal-deep); }
+
+  .btn-ghost { background: var(--surface); border-color: var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+  .btn-on-dark { background: #fff; color: var(--clay); }
+  .btn-on-dark:hover { background: #fff; color: var(--clay); opacity: .92; }
+
+  .btn-on-teal { background: var(--surface); color: var(--teal); border-color: transparent; }
+  .btn-on-teal:hover { opacity: .92; }
+  .btn-outline-on-teal { background: transparent; border-color: color-mix(in srgb, var(--on-teal) 55%, transparent); color: var(--on-teal); }
+  .btn-outline-on-teal:hover { background: color-mix(in srgb, var(--on-teal) 12%, transparent); color: var(--on-teal); }
+
+  .btn-lg { min-height: 58px; padding: 1rem 1.7rem; font-size: 1.05rem; }
+
+  /* ---------- Generic section ---------- */
+  .section { padding-block: var(--section-y); }
+  .section--tint { background: var(--surface-2); }
+  .section-head { max-width: 60ch; margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 .9rem;
+  }
+  .section h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); }
+  .section-head p {
+    margin-top: 1rem;
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+  }
+
+  [id] { scroll-margin-top: 92px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(3.5rem, 8vw, 6rem); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-family: var(--font-mono);
+    font-size: .8rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--teal);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: .4rem .8rem;
+    border-radius: 999px;
+  }
+  .hero-eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); flex: none; }
+  .hero h1 {
+    font-size: clamp(2.35rem, 6vw, 3.55rem);
+    margin: 1.4rem 0 0;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+  .hero-lead {
+    margin-top: 1.35rem;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .hero-cta {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .9rem;
+  }
+  .hero-trust {
+    margin-top: 1.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.4rem;
+    font-size: .92rem;
+    color: var(--ink-soft);
+    list-style: none;
+    padding: 0;
+  }
+  .hero-trust li { display: flex; align-items: center; gap: .5rem; }
+  .hero-trust svg { width: 18px; height: 18px; color: var(--teal); flex: none; }
+
+  .hero-visual { display: flex; justify-content: center; }
+  .hero-visual svg { width: 100%; max-width: 420px; height: auto; filter: drop-shadow(0 24px 44px rgba(30,42,48,.18)); }
+
+  /* ---------- Trust strip ---------- */
+  .strip {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem 2rem;
+    padding-block: 2.25rem;
+  }
+  .strip-item { display: flex; gap: .8rem; align-items: flex-start; }
+  .strip-item .ico {
+    width: 40px; height: 40px; flex: none;
+    display: grid; place-items: center;
+    border-radius: 10px;
+    background: var(--teal-tint);
+    color: var(--teal);
+  }
+  .strip-item .ico svg { width: 21px; height: 21px; }
+  .strip-item h3 { font-family: var(--font-body); font-size: 1rem; font-weight: 700; letter-spacing: 0; }
+  .strip-item p { font-size: .9rem; color: var(--ink-soft); margin-top: .15rem; }
+
+  /* ---------- Services ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.5rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+  }
+  .card .ico {
+    width: 46px; height: 46px;
+    display: grid; place-items: center;
+    border-radius: 12px;
+    background: var(--teal-tint);
+    color: var(--teal);
+    margin-bottom: 1.1rem;
+  }
+  .card .ico svg { width: 24px; height: 24px; }
+  .card h3 { font-size: 1.24rem; }
+  .card p { margin-top: .55rem; color: var(--ink-soft); font-size: .98rem; }
+  .card ul {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    font-size: .9rem;
+    color: var(--ink-soft);
+  }
+  .card li { display: flex; gap: .5rem; align-items: flex-start; }
+  .card li::before {
+    content: "";
+    width: 6px; height: 6px;
+    margin-top: .55rem;
+    border-radius: 50%;
+    background: var(--amber);
+    flex: none;
+  }
+
+  /* ---------- Scam band ---------- */
+  .band-scam {
+    background: var(--clay);
+    color: var(--on-clay);
+  }
+  .band-scam .eyebrow { color: color-mix(in srgb, var(--on-clay) 78%, transparent); }
+  .scam-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.75rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  .band-scam h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+  .band-scam .lead { margin-top: 1rem; font-size: 1.08rem; color: color-mix(in srgb, var(--on-clay) 88%, transparent); }
+  .scam-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: .9rem;
+  }
+  .scam-list li {
+    display: flex;
+    gap: .7rem;
+    align-items: flex-start;
+    background: color-mix(in srgb, #000 12%, var(--clay));
+    border: 1px solid color-mix(in srgb, var(--on-clay) 18%, transparent);
+    border-radius: 10px;
+    padding: .8rem .95rem;
+    font-size: .96rem;
+  }
+  .scam-list svg { width: 20px; height: 20px; flex: none; margin-top: 2px; color: var(--on-clay); }
+  .scam-cta { margin-top: 1.75rem; }
+
+  /* ---------- How it works ---------- */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .step {
+    position: relative;
+    padding: 1.6rem 1.4rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .step .num {
+    font-family: var(--font-mono);
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--teal);
+    letter-spacing: .1em;
+  }
+  .step h3 { font-size: 1.2rem; margin-top: .5rem; }
+  .step p { margin-top: .5rem; color: var(--ink-soft); font-size: .96rem; }
+
+  /* ---------- Booking ---------- */
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    align-items: start;
+  }
+  .booking-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: clamp(1.2rem, 3vw, 1.6rem);
+    box-shadow: var(--shadow);
+  }
+
+  .cal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: .75rem;
+  }
+  .cal-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+  .cal-nav {
+    width: 44px; height: 44px;
+    flex: none;
+    border-radius: 10px;
+    border: 1.5px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+  }
+  .cal-nav:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+  .cal-nav:disabled { opacity: .3; cursor: not-allowed; }
+
+  .cal-dow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+  .cal-dow span {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--silver);
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  .cal-day {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+  }
+  .cal-day:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+  .cal-day:disabled { color: var(--silver); background: transparent; cursor: default; opacity: .45; }
+  .cal-day.is-empty { visibility: hidden; }
+  .cal-day[aria-pressed="true"] {
+    background: var(--teal);
+    color: var(--on-teal);
+    border-color: var(--teal);
+  }
+  .cal-note { margin-top: 1rem; font-size: .85rem; color: var(--silver); }
+
+  .booking-panel { min-height: 360px; display: flex; flex-direction: column; }
+  .booking-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    color: var(--ink-soft);
+    padding: 1.5rem;
+  }
+  .booking-empty svg { width: 44px; height: 44px; color: var(--teal); }
+
+  .slot-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .85rem 1rem;
+    background: var(--teal-tint);
+    border-radius: 10px;
+    margin-bottom: 1.3rem;
+  }
+  .slot-summary .when { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
+  .slot-summary button {
+    background: none;
+    border: 0;
+    color: var(--teal-deep);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: .9rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    flex: none;
+  }
+
+  .booking-step-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: .9rem;
+  }
+  .slot-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .6rem;
+  }
+  .slot {
+    min-height: 50px;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: .95rem;
+    cursor: pointer;
+  }
+  .slot:hover { border-color: var(--teal); color: var(--teal); }
+  .slot[aria-pressed="true"] { background: var(--teal); color: var(--on-teal); border-color: var(--teal); }
+
+  .booking-done {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  .booking-done .check {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--teal-tint);
+    color: var(--teal);
+    display: grid;
+    place-items: center;
+  }
+  .booking-done .check svg { width: 28px; height: 28px; }
+  .booking-done h3 { font-size: 1.3rem; }
+  .booking-done p { color: var(--ink-soft); max-width: 34ch; }
+
+  /* ---------- Pricing ---------- */
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+  .price {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.8rem 1.6rem;
+    box-shadow: var(--shadow);
+  }
+  .price.is-feature {
+    border-color: var(--teal);
+    border-width: 2px;
+  }
+  .price .tag {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--on-teal);
+    background: var(--teal);
+    padding: .3rem .6rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+  .price h3 { font-size: 1.3rem; }
+  .price .amount {
+    margin-top: .7rem;
+    font-family: var(--font-display);
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .price .amount span {
+    font-family: var(--font-body);
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--silver);
+  }
+  .price p.desc { margin-top: .7rem; color: var(--ink-soft); font-size: .95rem; }
+  .price ul {
+    margin: 1.2rem 0 1.6rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+    font-size: .94rem;
+  }
+  .price li { display: flex; gap: .55rem; align-items: flex-start; }
+  .price li svg { width: 18px; height: 18px; color: var(--teal); flex: none; margin-top: 3px; }
+  .price .btn { margin-top: auto; width: 100%; }
+
+  .price-note {
+    margin-top: 1.75rem;
+    font-size: .95rem;
+    color: var(--ink-soft);
+    display: flex;
+    gap: .6rem;
+    align-items: flex-start;
+  }
+  .price-note svg { width: 20px; height: 20px; color: var(--teal); flex: none; margin-top: 2px; }
+  .price-extra {
+    margin-top: 1rem;
+    font-size: .95rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  .about-grid p + p { margin-top: 1rem; }
+  .promise {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.7rem 1.6rem;
+  }
+  .promise h3 { font-family: var(--font-body); font-weight: 700; font-size: 1.05rem; }
+  .promise ul {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+  }
+  .promise li { display: flex; gap: .6rem; align-items: flex-start; color: var(--ink-soft); font-size: .97rem; }
+  .promise li svg { width: 19px; height: 19px; color: var(--teal); flex: none; margin-top: 3px; }
+
+  /* ---------- CTA band ---------- */
+  .band-cta {
+    background: var(--teal);
+    color: var(--on-teal);
+  }
+  .band-cta .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
+  }
+  .band-cta h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); max-width: 18ch; }
+  .band-cta p { margin-top: .6rem; color: color-mix(in srgb, var(--on-teal) 85%, transparent); }
+  .band-cta .actions { display: flex; flex-wrap: wrap; gap: .9rem; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+  }
+  .contact-lines { display: flex; flex-direction: column; gap: 1.4rem; }
+  .contact-line { display: flex; gap: .85rem; align-items: flex-start; }
+  .contact-line .ico {
+    width: 42px; height: 42px; flex: none;
+    display: grid; place-items: center;
+    border-radius: 10px;
+    background: var(--teal-tint);
+    color: var(--teal);
+  }
+  .contact-line .ico svg { width: 21px; height: 21px; }
+  .contact-line .label {
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--silver);
+  }
+  .contact-line .big {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: .1rem;
+  }
+  .contact-line .big:hover { color: var(--teal); }
+  .contact-line p { color: var(--ink-soft); font-size: .96rem; margin-top: .1rem; }
+
+  form.card-form {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.8rem 1.7rem;
+    box-shadow: var(--shadow);
+  }
+  .field { margin-bottom: 1.1rem; }
+  .field label {
+    display: block;
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+    color: var(--ink);
+  }
+  .field .hint { font-weight: 400; color: var(--silver); }
+  .field input[type="text"],
+  .field input[type="tel"],
+  .field input[type="email"],
+  .field textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: .8rem .9rem;
+    min-height: 52px;
+  }
+  .field textarea { min-height: 110px; resize: vertical; line-height: 1.5; }
+  .field input:focus, .field textarea:focus {
+    outline: 3px solid var(--focus);
+    outline-offset: 1px;
+    border-color: var(--teal);
+  }
+  fieldset { border: 0; padding: 0; margin: 0 0 1.1rem; }
+  fieldset legend {
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    padding: 0;
+  }
+  .radio-row { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .radio-row label {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    border: 1.5px solid var(--line);
+    background: var(--paper);
+    border-radius: 999px;
+    padding: .55rem .95rem;
+    font-size: .93rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .radio-row input { accent-color: var(--teal); width: 18px; height: 18px; }
+  .radio-row label:has(input:checked) {
+    border-color: var(--teal);
+    background: var(--teal-tint);
+    color: var(--teal-deep);
+  }
+  form .btn { width: 100%; }
+  .form-foot { margin-top: .9rem; font-size: .88rem; color: var(--silver); text-align: center; }
+
+  /* ---------- Footer ---------- */
+  .site-footer {
+    background: var(--ink);
+    color: #C9D3D6;
+    padding-block: clamp(2.5rem, 5vw, 3.75rem);
+  }
+  :root[data-theme="dark"] .site-footer,
+  :root:not([data-theme="light"]) .site-footer { background: #0C1415; }
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
+    align-items: center;
+  }
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  .footer-nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+  .footer-nav a { color: #C9D3D6; text-decoration: none; font-size: .93rem; }
+  .footer-nav a:hover { color: #fff; }
+  .footer-fine {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,.12);
+    font-size: .84rem;
+    color: #9AA7AB;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-width: 70ch;
+  }
+
+  /* ---------- Reveal animation ---------- */
+  .js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1000px) {
+    .site-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: .2rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: .75rem var(--pad-inline) 1.1rem;
+    }
+    .site-header.nav-open .site-nav { display: flex; }
+    .site-nav a { padding: .8rem 0; font-size: 1.02rem; border-bottom: 1px solid var(--line); }
+    .site-nav a:last-child { border-bottom: 0; }
+    .nav-toggle { display: inline-flex; }
+    .header-cta-label { display: none; }
+    .header-actions .btn { padding-inline: .9rem; }
+  }
+
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { order: -1; }
+    .hero-visual svg { max-width: 320px; }
+    .strip-grid { grid-template-columns: repeat(2, 1fr); }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .scam-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .booking-grid { grid-template-columns: 1fr; }
+    .price-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .strip-grid { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
+    .hero-cta .btn { width: 100%; }
+    .band-cta .actions .btn { width: 100%; }
+    .slot-row { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Silver Support home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="11.5" style="fill:var(--teal)"/>
+          <path d="M25.5 12.2 C25.5 8.6 14 8.6 14 14.6 C14 19.8 25.8 18.6 25.8 24 C25.8 30 14 30 14 26.2"
+                style="fill:none;stroke:var(--amber)" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round"
+                opacity="0.45" transform="translate(2.6 2.6)"/>
+          <path d="M25.5 12.2 C25.5 8.6 14 8.6 14 14.6 C14 19.8 25.8 18.6 25.8 24 C25.8 30 14 30 14 26.2"
+                style="fill:none;stroke:#FFFFFF" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      Silver Support
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#scams">Scam help</a>
+      <a href="#how">How it works</a>
+      <a href="#booking">Book</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        Menu
+      </button>
+      <a class="btn btn-primary" href="tel:+14107010751">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="header-cta-label">(410) 701-0751</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <span class="hero-eyebrow"><span class="dot" aria-hidden="true"></span> Serving Saint Augustine, FL</span>
+        <h1>Patient tech help for <em>seniors</em> &mdash; and anyone who wants a hand.</h1>
+        <p class="hero-lead">We come to your home or connect by phone and screen-share to fix the frustrating stuff &mdash; slowly, kindly, and without the jargon.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#booking">Book a visit</a>
+          <a class="btn btn-outline btn-lg" href="tel:+14107010751">Call (410) 701-0751</a>
+        </div>
+        <ul class="hero-trust">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Background-checked helpers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No rushing, no jargon</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Same-week appointments</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" role="img">
+          <style>
+            .hv-card   { fill: var(--surface); stroke: var(--line); stroke-width: 2; }
+            .hv-bar    { fill: var(--teal); }
+            .hv-dot    { fill: var(--on-teal); }
+            .hv-ring   { fill: none; stroke: var(--teal); stroke-width: 3; }
+            .hv-ring-a { fill: none; stroke: var(--amber); stroke-width: 3; }
+            .hv-tick   { fill: none; stroke: var(--teal); stroke-width: 3; }
+            .hv-strong { fill: var(--ink); }
+            .hv-soft   { fill: var(--silver); }
+            .hv-btn    { fill: var(--amber); }
+            .hv-btn-t  { fill: #fff; }
+          </style>
+          <rect class="hv-card" x="34" y="30" width="332" height="320" rx="20"/>
+          <rect class="hv-bar" x="34" y="30" width="332" height="60" rx="20"/>
+          <rect class="hv-bar" x="34" y="70" width="332" height="20"/>
+          <circle class="hv-dot" cx="66" cy="60" r="7" opacity="0.9"/>
+          <rect class="hv-dot" x="84" y="53" width="150" height="14" rx="7" opacity="0.85"/>
+
+          <g stroke-linecap="round">
+            <circle class="hv-ring" cx="72" cy="140" r="13"/>
+            <path class="hv-tick" d="M66 140l5 5 9-11"/>
+            <rect class="hv-strong" x="100" y="130" width="210" height="12" rx="6" opacity="0.72"/>
+            <rect class="hv-soft" x="100" y="150" width="150" height="10" rx="5" opacity="0.6"/>
+          </g>
+          <g stroke-linecap="round">
+            <circle class="hv-ring" cx="72" cy="200" r="13"/>
+            <path class="hv-tick" d="M66 200l5 5 9-11"/>
+            <rect class="hv-strong" x="100" y="190" width="190" height="12" rx="6" opacity="0.72"/>
+            <rect class="hv-soft" x="100" y="210" width="120" height="10" rx="5" opacity="0.6"/>
+          </g>
+          <g stroke-linecap="round">
+            <circle class="hv-ring-a" cx="72" cy="260" r="13"/>
+            <rect class="hv-strong" x="100" y="250" width="170" height="12" rx="6" opacity="0.72"/>
+            <rect class="hv-soft" x="100" y="270" width="140" height="10" rx="5" opacity="0.6"/>
+          </g>
+
+          <rect class="hv-btn" x="66" y="304" width="180" height="30" rx="15"/>
+          <rect class="hv-btn-t" x="92" y="315" width="128" height="9" rx="4.5" opacity="0.95"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST STRIP ===================== -->
+  <section class="strip">
+    <div class="container strip-grid">
+      <div class="strip-item reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span>
+        <div><h3>In your home</h3><p>We travel to you across Saint Augustine, tools in hand.</p></div>
+      </div>
+      <div class="strip-item reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.5z"/><path d="M8 9h8"/><path d="M8 12h5"/></svg></span>
+        <div><h3>Or over the phone</h3><p>Quick fixes by call and secure screen-share, anywhere in the U.S.</p></div>
+      </div>
+      <div class="strip-item reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <div><h3>Checked &amp; trusted</h3><p>Every helper is background-checked, insured, and courteous.</p></div>
+      </div>
+      <div class="strip-item reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3 2.9-4.6 5.5-4.6S13.9 16 14.5 19"/><circle cx="17" cy="9" r="2.6"/><path d="M16 14.4c2.2.1 3.9 1.6 4.5 4.1"/></svg></span>
+        <div><h3>Family welcome</h3><p>Caregivers and adult children can sit in or arrange help remotely.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">What we help with</p>
+        <h2>One friendly number for every kind of tech trouble</h2>
+        <p>Phones, tablets, laptops, TVs, smart-home gadgets, health apps &mdash; if it has a screen or a signal, we can help you make sense of it.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/><path d="m2.5 8 2 2-2 2"/><path d="M4.5 10h4"/></svg></span>
+          <h3>Setup &amp; onboarding</h3>
+          <p>Getting a new phone, tablet, laptop, or smart TV working the way you want it.</p>
+          <ul>
+            <li>Move contacts and photos from your old device</li>
+            <li>Email accounts and a walkthrough of the basics</li>
+            <li>Bigger text, VoiceOver, hearing-aid pairing</li>
+            <li>Home Wi-Fi and routers</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.7-.7-2.6z"/></svg></span>
+          <h3>Everyday troubleshooting</h3>
+          <p>The bread-and-butter fixes that make a computer usable again.</p>
+          <ul>
+            <li>&ldquo;It&rsquo;s slow,&rdquo; frozen apps, crashes</li>
+            <li>Printers, Bluetooth headphones &amp; hearing aids</li>
+            <li>Forgotten passwords, confusing updates</li>
+            <li>Recovering files or apps removed by mistake</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="m15.5 10 6-3.5v11l-6-3.5"/></svg></span>
+          <h3>Staying connected</h3>
+          <p>Seeing the grandkids and keeping up with friends, without the stress.</p>
+          <ul>
+            <li>FaceTime, Zoom, WhatsApp, Messenger</li>
+            <li>Email &mdash; attachments, spam, replies</li>
+            <li>Facebook groups and sharing photos</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"/><path d="M6 10v10h12V10"/><path d="M12 15v.01"/><path d="M9.5 12.5a3.5 3.5 0 0 1 5 0"/></svg></span>
+          <h3>Smart home &amp; safety</h3>
+          <p>Devices that add convenience, reminders, and peace of mind.</p>
+          <ul>
+            <li>Medical alert systems &amp; fall detection</li>
+            <li>Ring / Nest video doorbells</li>
+            <li>Alexa &amp; Google Home for reminders and calls</li>
+            <li>Smart plugs and lights for easier living</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 3 9 2-4h7"/></svg></span>
+          <h3>Health tech</h3>
+          <p>Ready before the appointment, not scrambling during it.</p>
+          <ul>
+            <li>Telehealth and video-visit apps</li>
+            <li>Patient portals like MyChart</li>
+            <li>Medication reminder apps</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M10 10v8M14 10v8M19 10v8"/><path d="M3 20h18"/></svg></span>
+          <h3>Financial &amp; online accounts</h3>
+          <p>Confident, careful access to the accounts that matter most.</p>
+          <ul>
+            <li>Online banking and bill pay</li>
+            <li>Medicare.gov and Social Security accounts</li>
+            <li>Setting up a password manager</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="13" rx="2.5"/><path d="M8 21h8"/><path d="M12 17.5V21"/><path d="m10.5 8.5 4 2.5-4 2.5z"/></svg></span>
+          <h3>Entertainment</h3>
+          <p>Watch what you want, on the device you already own.</p>
+          <ul>
+            <li>Netflix, Hulu, Prime Video setup</li>
+            <li>Remote controls that finally make sense</li>
+            <li>Cutting the cord from cable</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span>
+          <h3>Ongoing tech check-ins</h3>
+          <p>A little regular attention keeps small problems from growing.</p>
+          <ul>
+            <li>Monthly visit or call</li>
+            <li>A help line for quick questions</li>
+            <li>Update management and data backup</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M12 8v4"/><path d="M12 15v.01"/></svg></span>
+          <h3>Scam &amp; fraud protection</h3>
+          <p>The one we&rsquo;re asked about most &mdash; and take most seriously.</p>
+          <ul>
+            <li>A second opinion on suspicious emails and texts</li>
+            <li>Spotting fake &ldquo;your computer has a virus&rdquo; pop-ups</li>
+            <li>Two-factor authentication set up properly</li>
+            <li>Calm, thorough clean-up if something has happened</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCAM BAND ===================== -->
+  <section class="section band-scam" id="scams">
+    <div class="container scam-grid">
+      <div class="reveal">
+        <p class="eyebrow">Scam &amp; fraud protection</p>
+        <h2>Before you click, ask us.</h2>
+        <p class="lead">Fraud aimed at older adults is relentless and convincing. There is never a charge or a judgment for a &ldquo;is this real?&rdquo; question &mdash; that is exactly what we are here for.</p>
+        <div class="scam-cta">
+          <a class="btn btn-on-dark btn-lg" href="tel:+14107010751">Talk to someone now</a>
+        </div>
+      </div>
+      <ul class="scam-list reveal">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="m4 6 8 6 8-6"/></svg> We review suspicious emails and texts <strong>with you</strong>, before anything is clicked.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m9 9 6 4M15 9l-6 4"/></svg> We identify fake tech-support pop-ups and the phone numbers behind them.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> We set up two-factor authentication so a stolen password isn&rsquo;t enough.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 8s2-2 7-2 7 2 7 2"/><path d="M5 8v8c0 2 3 4 7 4s7-2 7-4V8"/></svg> If money or access was already lost: new passwords, statement checks, and reports to the bank and FTC.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 4v6h6"/></svg> Plain-language education sessions on the scams making the rounds right now.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>Three simple steps</h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="num">Step 1</span>
+          <h3>Tell us what&rsquo;s going on</h3>
+          <p>Pick a date below, call, or send a note. Describe the problem in your own words &mdash; there&rsquo;s no wrong way to say it.</p>
+        </li>
+        <li class="step reveal">
+          <span class="num">Step 2</span>
+          <h3>We help, your way</h3>
+          <p>We come to your home or connect by phone and screen-share, usually the same week, at a time that suits you.</p>
+        </li>
+        <li class="step reveal">
+          <span class="num">Step 3</span>
+          <h3>You&rsquo;re set &mdash; with notes</h3>
+          <p>We fix it, show you how, and leave written step-by-step notes. A quick follow-up check-in is always included.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== BOOKING ===================== -->
+  <section class="section section--tint" id="booking">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Booking</p>
+        <h2>Pick a day that works for you</h2>
+        <p>Choose a date and time, tell us a little about what you need, and we&rsquo;ll confirm by phone or email within one business day. Nothing is charged until the visit is done.</p>
+      </div>
+
+      <div class="booking-grid">
+        <!-- Calendar -->
+        <div class="booking-card reveal">
+          <div class="cal-head">
+            <button type="button" class="cal-nav" id="calPrev" aria-label="Previous month">&lsaquo;</button>
+            <div class="cal-title" id="calTitle" aria-live="polite">&nbsp;</div>
+            <button type="button" class="cal-nav" id="calNext" aria-label="Next month">&rsaquo;</button>
+          </div>
+          <div class="cal-dow" aria-hidden="true">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+          <div class="cal-grid" id="calGrid" role="grid" aria-label="Choose an appointment date"></div>
+          <p class="cal-note">Appointments Monday&ndash;Saturday. Same-day and Sunday visits: please call.</p>
+        </div>
+
+        <!-- Panel -->
+        <div class="booking-card booking-panel reveal">
+          <div class="booking-empty" id="bkEmpty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="m9 14 2 2 4-4"/></svg>
+            <p>Select a date on the calendar to see available times.</p>
+          </div>
+
+          <div id="bkSlots" hidden>
+            <div class="slot-summary">
+              <span class="when" id="bkSlotsWhen">&nbsp;</span>
+              <button type="button" id="bkBackToCal">Change date</button>
+            </div>
+            <p class="booking-step-title">Choose a start time</p>
+            <div class="slot-row" id="bkSlotRow"></div>
+          </div>
+
+          <form id="bkForm" hidden novalidate>
+            <div class="slot-summary">
+              <span class="when" id="bkFormWhen">&nbsp;</span>
+              <button type="button" id="bkBackToSlots">Change time</button>
+            </div>
+            <div class="field">
+              <label for="bk-name">Your name</label>
+              <input type="text" id="bk-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="bk-phone">Phone number</label>
+              <input type="tel" id="bk-phone" name="phone" autocomplete="tel" required />
+            </div>
+            <div class="field">
+              <label for="bk-email">Email <span class="hint">(optional)</span></label>
+              <input type="email" id="bk-email" name="email" autocomplete="email" />
+            </div>
+            <fieldset>
+              <legend>Where should we help?</legend>
+              <div class="radio-row">
+                <label><input type="radio" name="mode" value="In my home" checked /> In my home</label>
+                <label><input type="radio" name="mode" value="Remotely (phone / screen-share)" /> Remotely</label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="bk-address">Street address <span class="hint">(for in-home visits)</span></label>
+              <input type="text" id="bk-address" name="address" autocomplete="street-address" />
+            </div>
+            <div class="field">
+              <label for="bk-msg">What do you need help with?</label>
+              <textarea id="bk-msg" name="message" placeholder="A sentence or two about the device and the problem is plenty."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Request this appointment</button>
+            <p class="form-foot">This opens your email so you can send the request. Prefer to talk? Call <a href="tel:+14107010751">(410) 701-0751</a>.</p>
+          </form>
+
+          <div class="booking-done" id="bkDone" hidden>
+            <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <h3>Almost there</h3>
+            <p id="bkDoneMsg">Your email app should have opened with the request ready to send. Press send and we&rsquo;ll confirm within one business day.</p>
+            <button type="button" class="btn btn-ghost" id="bkReset">Book another time</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRICING ===================== -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Pricing</p>
+        <h2>Simple, honest rates &mdash; quoted before we start</h2>
+        <p>Flat prices, told to you up front. If we can&rsquo;t solve it, you don&rsquo;t pay for that visit.</p>
+      </div>
+
+      <div class="price-grid">
+        <div class="price reveal">
+          <h3>Remote help</h3>
+          <div class="amount">$45<span> / 30 min</span></div>
+          <p class="desc">Phone call plus optional secure screen-share. Best for quick, well-defined problems.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Same-day slots often available</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Available anywhere in the U.S.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Written notes emailed afterward</li>
+          </ul>
+          <a class="btn btn-ghost" href="#booking">Request remote help</a>
+        </div>
+
+        <div class="price is-feature reveal">
+          <span class="tag">Best value</span>
+          <h3>Tech Check-In plan</h3>
+          <div class="amount">$39<span> / month</span></div>
+          <p class="desc">Ongoing peace of mind for the person you care about &mdash; or yourself.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> One scheduled visit or call each month</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Priority access to the help line</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Updates managed, backups checked</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Cancel any time</li>
+          </ul>
+          <a class="btn btn-primary" href="#booking">Start a plan</a>
+        </div>
+
+        <div class="price reveal">
+          <h3>Home visit</h3>
+          <div class="amount">$99<span> / first visit</span></div>
+          <p class="desc">Up to 90 minutes in your home. Follow-up visits $79/hour.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Hands-on setup and troubleshooting</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Wi-Fi, printers, TVs, smart-home devices</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Family can join by phone if they like</li>
+          </ul>
+          <a class="btn btn-ghost" href="#booking">Book a home visit</a>
+        </div>
+      </div>
+
+      <p class="price-extra reveal"><strong>Also available:</strong> Help Line &mdash; $19/month for unlimited quick phone questions during business hours &nbsp;&bull;&nbsp; Data backup setup from $59 &nbsp;&bull;&nbsp; Group scam-awareness talks for clubs and senior centers.</p>
+      <p class="price-note reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M11 12h1v4h1"/></svg>
+        We never charge for phone time spent deciding whether you need us. Ask first, always.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section section--tint" id="about">
+    <div class="container about-grid">
+      <div class="reveal">
+        <p class="eyebrow">About Silver Support</p>
+        <h2>We treat your time and patience with respect</h2>
+        <p>Silver Support is a local Saint Augustine service, started for a simple reason: capable, curious people were being made to feel foolish by their own devices &mdash; and by the support lines meant to help them.</p>
+        <p>We work at your pace. We explain what we&rsquo;re doing and why. We write it down so you can do it yourself next time. And we will tell you honestly when you <em>don&rsquo;t</em> need to buy something.</p>
+        <p>Whether you&rsquo;re setting up your first tablet or recovering from a scam, you&rsquo;ll talk to a real person who is glad you called.</p>
+      </div>
+      <div class="promise reveal">
+        <h3>Our promise to every client</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> We never rush you or talk down to you.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> We explain everything in plain language.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> We leave written notes you can keep.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> We don&rsquo;t upsell gadgets you don&rsquo;t need.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Your passwords stay yours &mdash; we&rsquo;ll never ask for them by email or unsolicited call.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BAND ===================== -->
+  <section class="section band-cta">
+    <div class="container inner">
+      <div class="reveal">
+        <h2>Ready to get unstuck?</h2>
+        <p>Call for a friendly, no-pressure conversation &mdash; or pick a time and we&rsquo;ll come to you.</p>
+      </div>
+      <div class="actions reveal">
+        <a class="btn btn-on-teal btn-lg" href="tel:+14107010751">Call (410) 701-0751</a>
+        <a class="btn btn-outline-on-teal btn-lg" href="#booking">Book online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Questions before you book?</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-lines reveal">
+          <div class="contact-line">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div>
+              <div class="label">Call or text</div>
+              <a class="big" href="tel:+14107010751">(410) 701-0751</a>
+              <p>Mon&ndash;Sat, 8am&ndash;7pm</p>
+            </div>
+          </div>
+          <div class="contact-line">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <div>
+              <div class="label">Email</div>
+              <a class="big" href="mailto:silversupporttt@gmail.com">silversupporttt@gmail.com</a>
+              <p>We reply within one business day.</p>
+            </div>
+          </div>
+          <div class="contact-line">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div>
+              <div class="label">Service area</div>
+              <span class="big">Saint Augustine, Florida</span>
+              <p>In-person across St. Augustine and within about 25 miles &bull; Remote help nationwide.</p>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          NOTE: This form opens the visitor's email app with the details filled in.
+          For submissions delivered straight to silversupporttt@gmail.com without the
+          visitor needing an email app, connect a free form service (Formspree,
+          Netlify Forms, Google Forms) and point the <form> action there.
+        -->
+        <form class="card-form reveal" id="contact-form" novalidate>
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone number</label>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel" required />
+          </div>
+          <div class="field">
+            <label for="f-email">Email <span class="hint">(optional)</span></label>
+            <input type="email" id="f-email" name="email" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="f-msg">Your question</label>
+            <textarea id="f-msg" name="message" placeholder="Ask us anything. Everyday words are perfect." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+          <p class="form-foot">Prefer to talk? Call <a href="tel:+14107010751">(410) 701-0751</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <span class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="11.5" style="fill:var(--teal)"/>
+            <path d="M25.5 12.2 C25.5 8.6 14 8.6 14 14.6 C14 19.8 25.8 18.6 25.8 24 C25.8 30 14 30 14 26.2"
+                  style="fill:none;stroke:var(--amber)" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round"
+                  opacity="0.45" transform="translate(2.6 2.6)"/>
+            <path d="M25.5 12.2 C25.5 8.6 14 8.6 14 14.6 C14 19.8 25.8 18.6 25.8 24 C25.8 30 14 30 14 26.2"
+                  style="fill:none;stroke:#FFFFFF" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Silver Support
+      </span>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#scams">Scam help</a>
+        <a href="#booking">Book</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-fine">
+      <p>Silver Support is an independent service based in Saint Augustine, Florida, and is not affiliated with Apple, Google, Microsoft, Amazon, or any device or software maker.</p>
+      <p>We will never ask for your passwords, banking details, or remote access through an unsolicited call, email, or text. If someone contacts you claiming to be us and does, hang up and call <a href="tel:+14107010751">(410) 701-0751</a>.</p>
+      <p>&copy; 2026 Silver Support. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+
+    /* ---------- Mobile nav ---------- */
+    var header = document.querySelector('.site-header');
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('site-nav');
+    if (toggle && header) {
+      toggle.addEventListener('click', function () {
+        var open = header.classList.toggle('nav-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          header.classList.remove('nav-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    /* ---------- Header shadow on scroll ---------- */
+    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* ---------- Reveal on scroll ---------- */
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveals = document.querySelectorAll('.reveal');
+    var revealAll = function () {
+      reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    };
+    if (!reduce && 'IntersectionObserver' in window) {
+      root.classList.add('js-reveal');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+      reveals.forEach(function (el) { io.observe(el); });
+      /* Safety net: never leave content hidden if the observer can't run
+         (e.g. page first painted while in a background/hidden tab). */
+      window.addEventListener('load', function () { setTimeout(revealAll, 1500); });
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden) revealAll();
+      });
+    }
+
+    /* ---------- Contact form -> mailto ---------- */
+    var cform = document.getElementById('contact-form');
+    if (cform) {
+      cform.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!cform.checkValidity()) { cform.reportValidity(); return; }
+        var d = new FormData(cform);
+        var body = [
+          'Name: ' + (d.get('name') || ''),
+          'Phone: ' + (d.get('phone') || ''),
+          'Email: ' + (d.get('email') || '(not given)'),
+          '',
+          (d.get('message') || '')
+        ].join('\n');
+        window.location.href = 'mailto:silversupporttt@gmail.com'
+          + '?subject=' + encodeURIComponent('Question from ' + (d.get('name') || 'website visitor'))
+          + '&body=' + encodeURIComponent(body);
+      });
+    }
+
+    /* ================= Booking calendar ================= */
+    var grid    = document.getElementById('calGrid');
+    var title   = document.getElementById('calTitle');
+    var prevBtn = document.getElementById('calPrev');
+    var nextBtn = document.getElementById('calNext');
+
+    var elEmpty = document.getElementById('bkEmpty');
+    var elSlots = document.getElementById('bkSlots');
+    var elForm  = document.getElementById('bkForm');
+    var elDone  = document.getElementById('bkDone');
+    var slotRow = document.getElementById('bkSlotRow');
+    var slotsWhen = document.getElementById('bkSlotsWhen');
+    var formWhen  = document.getElementById('bkFormWhen');
+    var doneMsg   = document.getElementById('bkDoneMsg');
+
+    var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var SLOTS  = ['9:00 AM','10:30 AM','12:00 PM','1:30 PM','3:00 PM','4:30 PM'];
+
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var minMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+    var maxMonth = new Date(today.getFullYear(), today.getMonth() + 4, 1);
+    var view = new Date(minMonth);
+
+    var selectedDate = null;
+    var selectedTime = null;
+
+    function sameMonth(a, b) { return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth(); }
+
+    function fmtLong(dt) {
+      return DAYS[dt.getDay()] + ', ' + MONTHS[dt.getMonth()] + ' ' + dt.getDate() + ', ' + dt.getFullYear();
+    }
+
+    function show(el) {
+      [elEmpty, elSlots, elForm, elDone].forEach(function (n) { n.hidden = (n !== el); });
+    }
+
+    function renderCal() {
+      grid.innerHTML = '';
+      title.textContent = MONTHS[view.getMonth()] + ' ' + view.getFullYear();
+      prevBtn.disabled = sameMonth(view, minMonth);
+      nextBtn.disabled = sameMonth(view, maxMonth);
+
+      var firstDow = new Date(view.getFullYear(), view.getMonth(), 1).getDay();
+      var daysInMonth = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+
+      for (var i = 0; i < firstDow; i++) {
+        var blank = document.createElement('div');
+        blank.className = 'cal-day is-empty';
+        grid.appendChild(blank);
+      }
+
+      for (var day = 1; day <= daysInMonth; day++) {
+        var cellDate = new Date(view.getFullYear(), view.getMonth(), day);
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'cal-day';
+        btn.textContent = day;
+
+        var isPast = cellDate < today;
+        var isSunday = cellDate.getDay() === 0;
+        var isFar = cellDate > new Date(maxMonth.getFullYear(), maxMonth.getMonth() + 1, 0);
+
+        if (isPast || isSunday || isFar) {
+          btn.disabled = true;
+        } else {
+          btn.setAttribute('aria-pressed', selectedDate && cellDate.getTime() === selectedDate.getTime() ? 'true' : 'false');
+          btn.setAttribute('aria-label', fmtLong(cellDate));
+          (function (dt) {
+            btn.addEventListener('click', function () { pickDate(dt); });
+          })(cellDate);
+        }
+        grid.appendChild(btn);
+      }
+    }
+
+    function pickDate(dt) {
+      selectedDate = dt;
+      selectedTime = null;
+      renderCal();
+      slotsWhen.textContent = fmtLong(dt);
+      slotRow.innerHTML = '';
+      SLOTS.forEach(function (t) {
+        var s = document.createElement('button');
+        s.type = 'button';
+        s.className = 'slot';
+        s.textContent = t;
+        s.setAttribute('aria-pressed', 'false');
+        s.addEventListener('click', function () { pickTime(t); });
+        slotRow.appendChild(s);
+      });
+      show(elSlots);
+    }
+
+    function pickTime(t) {
+      selectedTime = t;
+      formWhen.textContent = fmtLong(selectedDate) + '  ·  ' + t;
+      show(elForm);
+      var nameField = document.getElementById('bk-name');
+      if (nameField) nameField.focus();
+    }
+
+    prevBtn.addEventListener('click', function () {
+      view = new Date(view.getFullYear(), view.getMonth() - 1, 1);
+      renderCal();
+    });
+    nextBtn.addEventListener('click', function () {
+      view = new Date(view.getFullYear(), view.getMonth() + 1, 1);
+      renderCal();
+    });
+    document.getElementById('bkBackToCal').addEventListener('click', function () { show(elEmpty); });
+    document.getElementById('bkBackToSlots').addEventListener('click', function () { show(elSlots); });
+    document.getElementById('bkReset').addEventListener('click', function () {
+      selectedDate = null; selectedTime = null; elForm.reset(); renderCal(); show(elEmpty);
+      document.getElementById('booking').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+
+    elForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('bk-name');
+      var phone = document.getElementById('bk-phone');
+      if (!name.value.trim() || !phone.value.trim()) { elForm.reportValidity(); return; }
+      var d = new FormData(elForm);
+      var whenStr = fmtLong(selectedDate) + ' at ' + selectedTime;
+      var body = [
+        'Requested appointment',
+        'Date:  ' + fmtLong(selectedDate),
+        'Time:  ' + selectedTime,
+        'Where: ' + (d.get('mode') || ''),
+        'Address: ' + (d.get('address') || '(not given)'),
+        '',
+        'Name:  ' + (d.get('name') || ''),
+        'Phone: ' + (d.get('phone') || ''),
+        'Email: ' + (d.get('email') || '(not given)'),
+        '',
+        'What they need help with:',
+        (d.get('message') || '(not described)')
+      ].join('\n');
+
+      window.location.href = 'mailto:silversupporttt@gmail.com'
+        + '?subject=' + encodeURIComponent('Booking request — ' + whenStr)
+        + '&body=' + encodeURIComponent(body);
+
+      doneMsg.textContent = 'Your email app should have opened with a request for '
+        + whenStr + ' ready to send. Press send and we’ll confirm within one business day. '
+        + 'If nothing opened, call (410) 701-0751.';
+      show(elDone);
+    });
+
+    renderCal();
+  })();
+</script>
